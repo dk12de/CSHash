@@ -60,5 +60,36 @@ namespace CSHash
                 return bReturnHash;
             }
         }
+
+        public byte[] HashFromFile(string filePath, int bufferSize = 12000000)
+        {
+            using (MD5Cng md5 = new MD5Cng())
+            {
+                byte[] bReturnHash = null;
+                using (BufferedStream bufferedStream = new BufferedStream(File.OpenRead(filePath), bufferSize))
+                {
+                    byte[] rawHash = md5.ComputeHash(bufferedStream);
+                    bReturnHash = rawHash;
+                }
+                return bReturnHash;
+            }
+        }
+
+        public async Task<byte[]> AsyncHashFromFile(string filePath, int bufferSize = 12000000)
+        {
+            using (MD5Cng md5 = new MD5Cng())
+            {
+                byte[] bReturnHash = null;
+                using (BufferedStream bufferedStream = new BufferedStream(File.OpenRead(filePath), bufferSize))
+                {
+                    await Task.Run(() =>
+                        {
+                            byte[] rawHash = md5.ComputeHash(bufferedStream);
+                            bReturnHash = rawHash;
+                        });            
+                }
+                return bReturnHash;
+            }
+        }
     }
 }
