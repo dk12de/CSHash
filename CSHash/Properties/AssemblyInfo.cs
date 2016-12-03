@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("CSHash")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("An open source and easy to use .NET library for hashing")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("CSHash")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright © 2016 dk12de")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
