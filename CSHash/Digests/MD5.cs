@@ -37,5 +37,28 @@ namespace CSHash
                 return bReturnHash;
             }
         }
+
+        public byte[] HashFromString(string value)
+        {
+            using (MD5Cng md5 = new MD5Cng())
+            {
+                byte[] rawHash = md5.ComputeHash(Encoding.Default.GetBytes(value));
+                return rawHash;
+            }
+        }
+
+        public async Task<byte[]> HashFromString(string value)
+        {
+            using (MD5Cng md5 = new MD5Cng())
+            {
+                byte[] bReturnHash = null;
+                await Task.Run(() =>
+                    {
+                        byte[] rawHash = md5.ComputeHash(Encoding.Default.GetBytes(value));
+                        bReturnHash = rawHash;
+                    });
+                return bReturnHash;
+            }
+        }
     }
 }
