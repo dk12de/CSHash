@@ -13,12 +13,32 @@ namespace CSHash.Tools
 
         }
 
-        public string ConvertRawByteArrayToFullString(byte[] bArr)
+        public string ConvertToBase64String(byte[] bArr)
+        {
+            return Convert.ToBase64String(bArr);
+        }
+        
+        public string ConvertToBase64String(string value)
+        {
+            return Convert.ToBase64String(Encoding.Default.GetBytes(value));
+        }
+
+        public byte[] ConvertFromBase64String(string value)
+        {
+            return Convert.FromBase64String(value);
+        }
+
+        public string ConvertFromBase64String(string value)
+        {
+            return Encoding.Default.GetString(Convert.FromBase64String(value));
+        }
+
+        public string ConvertByteArrayToFullString(byte[] bArr)
         {
             return BitConverter.ToString(bArr).Replace("-", String.Empty).ToLower();
         }
 
-        public string ConvertRawByteArrayToString(byte[] bArr)
+        public string ConvertByteArrayToString(byte[] bArr)
         {
             return BitConverter.ToString(bArr);
         }
