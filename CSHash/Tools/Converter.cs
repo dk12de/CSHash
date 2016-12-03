@@ -28,11 +28,6 @@ namespace CSHash.Tools
             return Convert.FromBase64String(value);
         }
 
-        public string ConvertFromBase64String(string value)
-        {
-            return Encoding.Default.GetString(Convert.FromBase64String(value));
-        }
-
         public string ConvertByteArrayToFullString(byte[] bArr)
         {
             return BitConverter.ToString(bArr).Replace("-", String.Empty).ToLower();
