@@ -86,7 +86,7 @@ namespace CSHash
                         {
                             byte[] rawHash = md5.ComputeHash(bufferedStream);
                             bReturnHash = rawHash;
-                        });            
+                        });
                 }
                 return bReturnHash;
             }
