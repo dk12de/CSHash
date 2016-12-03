@@ -22,5 +22,12 @@ namespace CSHash.Tools
         {
             return BitConverter.ToString(bArr);
         }
+
+        public byte[] UInt32ToBigEndian(UInt32 value)
+        {
+            byte[] result = BitConverter.GetBytes(value);
+            if (BitConverter.IsLittleEndian) { Array.Reverse(result); }           
+            return result;
+        }
     }
 }

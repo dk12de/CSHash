@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CSHash;
 using CSHash.Tools;
+using CSHash.Digests;
 
 namespace Example
 {
