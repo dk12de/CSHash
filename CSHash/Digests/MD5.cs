@@ -24,7 +24,7 @@ namespace CSHash
             }
         }
 
-        public async Task<byte[]> HashFromByteArray(byte[] bArr)
+        public async Task<byte[]> AsyncHashFromByteArray(byte[] bArr)
         {
             using (MD5Cng md5 = new MD5Cng())
             {
@@ -47,7 +47,7 @@ namespace CSHash
             }
         }
 
-        public async Task<byte[]> HashFromString(string value)
+        public async Task<byte[]> AsyncHashFromString(string value)
         {
             using (MD5Cng md5 = new MD5Cng())
             {
