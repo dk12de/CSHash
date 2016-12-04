@@ -70,6 +70,30 @@ namespace Example
 
                 Console.WriteLine(Environment.NewLine + "SHA256 hash: " + fullHash); Console.ReadLine(); goto start;
             }
+            else if (hashAlgorithm == "SHA-384")
+            {
+                Console.WriteLine(Environment.NewLine + "Enter an string: ");
+
+                string hashingString = Console.ReadLine();
+
+                SHA384 sha384 = new SHA384(); Converter converter = new Converter();
+                byte[] rawHash = sha384.HashFromString(hashingString);
+                string fullHash = converter.ConvertByteArrayToFullString(rawHash);
+
+                Console.WriteLine(Environment.NewLine + "SHA384 hash: " + fullHash); Console.ReadLine(); goto start;
+            }
+            else if (hashAlgorithm == "SHA-512")
+            {
+                Console.WriteLine(Environment.NewLine + "Enter an string: ");
+
+                string hashingString = Console.ReadLine();
+
+                SHA512 sha512 = new SHA512(); Converter converter = new Converter();
+                byte[] rawHash = sha512.HashFromString(hashingString);
+                string fullHash = converter.ConvertByteArrayToFullString(rawHash);
+
+                Console.WriteLine(Environment.NewLine + "SHA512 hash: " + fullHash); Console.ReadLine(); goto start;
+            }
             else if (hashAlgorithm == "Exit")
             {
             
