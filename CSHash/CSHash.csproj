@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Digests\CRC32.cs" />
+    <Compile Include="Digests\SHA512.cs" />
     <Compile Include="Digests\SHA384.cs" />
     <Compile Include="Digests\SHA256.cs" />
     <Compile Include="Implementations\CRC32.cs" />

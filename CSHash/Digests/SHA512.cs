@@ -8,30 +8,30 @@ using System.Security.Cryptography;
 
 namespace CSHash.Digests
 {
-    public class SHA384
+    public class SHA512
     {
-        public SHA384()
+        public SHA512()
         {
 
         }
 
         public byte[] HashFromByteArray(byte[] bArr)
         {
-            using (SHA384Managed sha384 = new SHA384Managed())
+            using (SHA512Managed sha512 = new SHA512Managed())
             {
-                byte[] rawHash = sha384.ComputeHash(bArr);
+                byte[] rawHash = sha512.ComputeHash(bArr);
                 return rawHash;
             }
         }
 
         public async Task<byte[]> AsyncHashFromByteArray(byte[] bArr)
         {
-            using (SHA384Managed sha384 = new SHA384Managed())
+            using (SHA512Managed sha512 = new SHA512Managed())
             {
                 byte[] bReturnHash = null;
                 await Task.Run(() =>
                 {
-                    byte[] rawHash = sha384.ComputeHash(bArr);
+                    byte[] rawHash = sha512.ComputeHash(bArr);
                     bReturnHash = rawHash;
                 });
                 return bReturnHash;
@@ -40,21 +40,21 @@ namespace CSHash.Digests
 
         public byte[] HashFromString(string value)
         {
-            using (SHA384Managed sha384 = new SHA384Managed())
+            using (SHA512Managed sha512 = new SHA512Managed())
             {
-                byte[] rawHash = sha384.ComputeHash(Encoding.Default.GetBytes(value));
+                byte[] rawHash = sha512.ComputeHash(Encoding.Default.GetBytes(value));
                 return rawHash;
             }
         }
 
         public async Task<byte[]> AsyncHashFromString(string value)
         {
-            using (SHA384Managed sha384 = new SHA384Managed())
+            using (SHA512Managed sha512 = new SHA512Managed())
             {
                 byte[] bReturnHash = null;
                 await Task.Run(() =>
                     {
-                        byte[] rawHash = sha384.ComputeHash(Encoding.Default.GetBytes(value));
+                        byte[] rawHash = sha512.ComputeHash(Encoding.Default.GetBytes(value));
                         bReturnHash = rawHash;
                     });
                 return bReturnHash;
@@ -63,12 +63,12 @@ namespace CSHash.Digests
 
         public byte[] HashFromFile(string filePath, int bufferSize = 12000000)
         {
-            using (SHA384Managed sha384 = new SHA384Managed())
+            using (SHA512Managed sha512 = new SHA512Managed())
             {
                 byte[] bReturnHash = null;
                 using (BufferedStream bufferedStream = new BufferedStream(File.OpenRead(filePath), bufferSize))
                 {
-                    byte[] rawHash = sha384.ComputeHash(bufferedStream);
+                    byte[] rawHash = sha512.ComputeHash(bufferedStream);
                     bReturnHash = rawHash;
                 }
                 return bReturnHash;
@@ -77,14 +77,14 @@ namespace CSHash.Digests
 
         public async Task<byte[]> AsyncHashFromFile(string filePath, int bufferSize = 12000000)
         {
-            using (SHA384Managed sha384 = new SHA384Managed())
+            using (SHA512Managed sha512 = new SHA512Managed())
             {
                 byte[] bReturnHash = null;
                 using (BufferedStream bufferedStream = new BufferedStream(File.OpenRead(filePath), bufferSize))
                 {
                     await Task.Run(() =>
                         {
-                            byte[] rawHash = sha384.ComputeHash(bufferedStream);
+                            byte[] rawHash = sha512.ComputeHash(bufferedStream);
                             bReturnHash = rawHash;
                         });
                 }
