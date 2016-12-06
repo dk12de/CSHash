@@ -23,6 +23,7 @@ using CSHash.Tools;
             byte[] hash = await sha1.AsyncHashFromString(value); // async hashing operation of value
 
             string fullHash = converter.ConvertByteArrayToFullString(hash); // converts raw (hash) byte array to an full useable string
+            
             return fullHash; // return full hash string
         }
 
