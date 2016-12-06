@@ -11,20 +11,19 @@ using CSHash.Tools;
 
         private async void Form1_Load(object sender, EventArgs e)
         {
-            string stringToHash = "Hello, World!";
-            string hashOfString = await ComputeHashFromString(stringToHash); // returns 0a0a9f2a6772942557ab5355d76af442f8f65e01
+            string stringToHash = "Hello, World!"; // the string to hash
+            string hashOfString = await ComputeHashFromString(stringToHash); // async hashing operation, returns 0a0a9f2a6772942557ab5355d76af442f8f65e01
             MessageBox.Show(hashOfString);
         }
 
-        public async Task<string> ComputeHashFromString(string value)
+        public async Task<string> ComputeHashFromString(string value) // async string task method for hashing (SHA1)
         {
-            SHA1 sha1 = new SHA1(); Converter converter = new Converter(); 
+            SHA1 sha1 = new SHA1(); Converter converter = new Converter(); // create constructor for converter & SHA1 digest class
 
-            byte[] hash = await sha1.AsyncHashFromString(value);
+            byte[] hash = await sha1.AsyncHashFromString(value); // async hashing operation of value
 
-            string fullHash = converter.ConvertByteArrayToFullString(hash);
-
-            return fullHash;
+            string fullHash = converter.ConvertByteArrayToFullString(hash); // converts raw (hash) byte array to an full useable string
+            return fullHash; // return full hash string
         }
 
 ```
