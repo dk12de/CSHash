@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("CSHash")]
-[assembly: AssemblyCopyright("Copyright © 2016 dk12de")]
+[assembly: AssemblyCopyright("Copyright © 2016 dk12de (dk12de.com)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -14,6 +14,11 @@ namespace CSHash.Digests
 
         }
 
+        /// <summary>
+        /// Generates an hash from an byte array.
+        /// </summary>
+        /// <param name="bArr">The byte array to hash.</param>
+        /// <returns>Raw byte array (the hash that can be converted into an string).</returns>
         public byte[] HashFromByteArray(byte[] bArr)
         {
             using (CSHash.Implementations.CRC32 crc = new CSHash.Implementations.CRC32())
